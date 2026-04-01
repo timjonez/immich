@@ -19677,6 +19677,11 @@
             "description": "Whether people are enabled",
             "type": "boolean"
           },
+          "minimumFaces": {
+            "default": 1,
+            "description": "A minimum face count that filters out people",
+            "type": "number"
+          },
           "sidebarWeb": {
             "default": false,
             "description": "Whether people appear in web sidebar",
@@ -19685,6 +19690,7 @@
         },
         "required": [
           "enabled",
+          "minimumFaces",
           "sidebarWeb"
         ],
         "type": "object"
@@ -19734,6 +19740,11 @@
           "enabled": {
             "description": "Whether people are enabled",
             "type": "boolean"
+          },
+          "minimumFaces": {
+            "description": "People face threshold",
+            "minimum": 1,
+            "type": "integer"
           },
           "sidebarWeb": {
             "description": "Whether people appear in web sidebar",

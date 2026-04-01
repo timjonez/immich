@@ -46,6 +46,12 @@ class PeopleUpdate {
 
   @ValidateBoolean({ optional: true, description: 'Whether people appear in web sidebar' })
   sidebarWeb?: boolean;
+
+  @Optional()
+  @IsInt()
+  @IsPositive()
+  @ApiProperty({ type: 'integer', description: 'People face threshold' })
+  minimumFaces?: number;
 }
 
 class SharedLinksUpdate {
@@ -217,6 +223,8 @@ class PeopleResponse {
   enabled: boolean = true;
   @ApiProperty({ description: 'Whether people appear in web sidebar' })
   sidebarWeb: boolean = false;
+  @ApiProperty({ description: 'A minimum face count that filters out people' })
+  minimumFaces: number = 1;
 }
 
 class TagsResponse {
